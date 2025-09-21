@@ -1,0 +1,189 @@
+*{
+    background: transparent;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spacing between sections */
+    width: 100%;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 16px; /* Spacing between chart and actionDiv */
+    
+  }
+  
+  .chart,
+  .actionDiv {
+    flex: 1; /* Ensures both take equal width */
+    border-radius: 10px;
+    background: var(--body-component-bg);
+    border: 1.7px solid var(--body-bg-secondary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100%;  Make sure the chart's parent container takes up full height */
+    max-width: 100%;  /* Ensure the chart container is responsive */
+    width: 100%;
+  }
+  
+  .tablesDiv {
+    border-radius: 10px;
+    background: var(--body-component-bg);
+    border: 1px solid var(--body-bg-secondary);
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column; /* Stack the chart and actionDiv */
+    }
+  }
+  
+
+
+
+  #chart {
+    margin: auto;  /* Centers the chart horizontally */
+    padding: 0;
+    display: flex;  /* Flexbox container for centering */
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
+    height: 100%;  /* Ensure it fills the parent container height */
+  }
+  
+  .chart {
+    display: flex;
+
+  }
+
+
+
+  .dashboardCard-title {
+    color: var(--body-heading);
+    font-size: 1.20rem;
+    margin-bottom: 0px;
+  }
+  
+  /* Overview Section */
+  .dashboardCardHeadingDiv {
+    background: var(--body-bg-secondary);
+    color: var(--body-font-secondary);
+    border-radius: 0px 0px 30px 30px;
+    min-width: 95%;
+    max-width: 95%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+
+  @media (max-width: 768px) {
+    #chart {
+      max-width: 100%; /* On smaller screens, allow the chart to fill the container width */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .chart {
+      max-width: 380px; /* Limit max-width on larger screens for a neat layout */
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Space between the cards (1 rem) */
+    width: 100%; /* Ensure the container takes full width */
+    align-items: center; /* Center the cards horizontally */
+    justify-content: flex-start; /* Align cards from the top */
+  }
+  
+  .actionCard {
+    background: var(--body-bg);
+    width: 70%; /* Adjust the width to a specific percentage or use a max-width for consistency */
+    max-width: 80%; /* Optional, maximum width to prevent cards from becoming too wide */
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  
+  .card-title {
+    text-wrap: wrap;
+    font-weight: bold;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 2.5rem;
+  }
+  
+  .button-outer-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .button-inner-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Toggle Button Styling */
+  .toggle-button {
+    width: 5rem; /* 80px - Reduced width */
+    height: 2rem; /* 32px - Reduced height */
+    border: none;
+    border-radius: 2rem; /* Slightly smaller border radius */
+    box-shadow: var(--body-component-bg-secondary) 0px 0.25rem 0.75rem inset,
+      var(--body-component-bg-secondary) 0px 1rem 2rem -1rem inset; /* Adjusted shadow for smaller button */
+    background: #f5f5f5;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.875rem; /* Slightly smaller text size */
+    font-weight: 600;
+    color: #dc3545; /* Red color for the OFF state */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  /* Round Button Effect (The "switch" part) */
+  .toggle-button::after {
+    content: "";
+    width: 1rem; /* 16px - Reduced size of the round button */
+    height: 1rem; /* 16px - Reduced size of the round button */
+    border-radius: 50%;
+    background: #dc3545; /* Default red color for the round button */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0.25rem 0.5rem;
+    position: absolute;
+    top: 0.5rem; /* Centers it vertically within the smaller button */
+    left: 0.5rem; /* Initial position of the toggle */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Toggle button state when "on" */
+  .toggle-button.on {
+    color: #28a745; /* Green color when ON */
+  }
+  
+  /* Round button's position when ON */
+  .toggle-button.on::after {
+    transform: translateX(3rem); /* Moves toggle to the opposite side within smaller button */
+    background: #28a745; /* Changes the round button color to green when ON */
+  }

@@ -1,0 +1,38 @@
+<div class="second-content">
+  <div class="container my-3">
+    <div class="card-list">
+      <div 
+        class="card" 
+        *ngFor="let card of cardlist" 
+        data-aos="flip-left" 
+        data-aos-duration="400"
+        [ngStyle]="{
+          'background': 'var(--' + card.card_background + ')',
+          'width': 'calc(' + card_width + '.' + card_width + '% - 20px)'
+        }">
+
+        <div *ngIf="card.is_mat_icon || card.is_google_icon" class="logo logo-icon">
+          <mat-icon>{{ card.media_content }}</mat-icon>
+          <p [ngStyle]="{'margin': card_heading_alignment }">{{ card.heading }}</p>
+        </div>
+
+        <div *ngIf="card.is_image" class="logo logo-image">
+          <img class="logo-img" [src]="card.media_content" [alt]="card.heading">
+          <p [ngStyle]="{'margin': card_heading_alignment }">{{ card.heading }}</p>
+        </div>
+
+        <div *ngIf="!(card.is_image || card.is_google_icon || card.is_mat_icon)" class="logo logo-text">
+          <p [ngStyle]="{'margin': card_heading_alignment }">{{ card.heading }}</p>
+        </div>
+
+        <p *ngIf="card.sub_heading" [ngStyle]="{'margin': card_sub_heading_alignment }" class="sub-heading">{{ card.sub_heading }}</p>
+
+        <hr class="divider">
+
+        <div class="card-content">
+          <p *ngIf="card.description" class="description">{{ card.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

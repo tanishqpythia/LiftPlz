@@ -1,0 +1,36 @@
+.notification {
+    display: flex;
+  }
+
+  .success {
+    background-color: rgb(31, 162, 31); /* Calm green for success */
+  }
+  
+  .success .notificationText {
+    color: white; /* White text for success */
+  }
+  
+  .error {
+    background-color: rgb(220, 53, 69); /* Subtle red for error */
+  }
+  
+  .error .notificationText {
+    color: white; /* White text for error */
+  }
+  
+  .info {
+    background-color: rgb(109, 187, 238); /* Soothing cyan for info */
+  }
+  
+  .info .notificationText {
+    color: white; /* White text for info */
+  }
+  
+  .warn {
+    background-color: rgb(255, 228, 148); /* Warm amber for warning */
+  }
+  
+  .warn .notificationText {
+    color: rgb(33, 37, 41); /* Dark text for warning for better contrast */
+  }
+  

@@ -1,0 +1,76 @@
+/* *{
+    background: transparent;
+} */
+
+
+.first-content {
+    /* position: relative; */
+    top:0;
+    height: 95vh;
+  }
+  
+  .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+  }
+  
+  #bg-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: fill;
+    z-index: 2;
+  }
+  
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  /* Glass effect background */
+  background: rgba(230, 244, 249, 0.25); /* light translucent tint */
+  backdrop-filter: blur(9px) saturate(100%);
+  -webkit-backdrop-filter: blur(9px) saturate(100%);
+
+  /* Optional border + shadow for realism */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  z-index: 4;
+}
+  
+  .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); 
+    text-align: center;
+    width: 70%;
+    color: var( --body-heading-third);
+    z-index: 6;
+  }
+  
+  .text{
+    color: var( --body-heading-third);
+    /* font-weight: bolder;/ */
+  }
+  
+  .login-text{
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.4px);
+    -webkit-backdrop-filter: blur(14.4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .login-text:hover{
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.863);
+   
+  }

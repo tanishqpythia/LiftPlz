@@ -1,0 +1,30 @@
+<ngx-ui-loader></ngx-ui-loader>
+<!-- <div class="layout"> -->
+  <header class="application-header" [class.hidden]="!isHeaderVisible">
+    <app-header></app-header>
+  </header>
+  
+  @if (auth.isAuthenticatedAndVerified()) {
+    <main class="content">
+      <app-dashboard-layout></app-dashboard-layout>
+    </main>
+    <!-- <footer class="all-web-footer">
+      <app-footer></app-footer>
+    </footer> -->
+  }
+  @else {
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+    <div class="infoFooter">
+      <app-info-footer></app-info-footer>
+    </div>
+    <footer class="all-web-footer">
+      <app-footer></app-footer>
+    </footer>
+  }
+  <button class="scroll-to-top shadow-lg" (click)="scrollToTop()" [hidden]="isAtTop()" >
+    <mat-icon>keyboard_arrow_up</mat-icon>
+  </button>
+  
+<!-- </div> -->

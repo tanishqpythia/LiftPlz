@@ -1,0 +1,63 @@
+<div class="table-container">
+  <!-- Summary Section remains unchanged -->
+  <div class="summary" *ngIf="summaryData">
+    <div *ngFor="let data of summaryData" class="summaryDiv">
+      <p class="summaryHeadingName font-weight-bold">{{ data.name }} : </p>
+      <p [ngClass]="{
+        'profit': data.outcome == 'P',
+        'loss': data.outcome == 'L',
+        'General': data.outcome == 'N'
+      }">
+        &nbsp;{{ data.outcome == 'P' ? '+' : data.outcome == 'L' ? '' : '' }}{{ data.value }}
+      </p>
+    </div>
+  </div>
+
+  <mat-form-field appearance="outline" class="filter-field" *ngIf="displayedColumns.length">
+    <mat-label>Filter</mat-label>
+    <input matInput (input)="applyFilter($event)" placeholder="Type any data value to filter" />
+  </mat-form-field>
+
+  <!-- Wrap the table in a scrollable container -->
+<div class="table-wrapper">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="onSort($event)"  
+    class="shadow-sm table table-hover"
+    *ngIf="tableReady"
+  >
+    <caption>{{tablecaption}}</caption>
+
+    <!-- Dynamic Data Columns -->
+    <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+      <th class="text-center" mat-header-cell *matHeaderCellDef mat-sort-header>{{ column }}</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row[column] }}
+      </td>
+    </ng-container>
+
+<!-- Action Column: Only Display If "RecordStatus" Exists in the Data -->
+<ng-container matColumnDef="action" *ngIf="hasRecordStatus">
+  <th class="text-center" mat-header-cell *matHeaderCellDef>action</th>
+  <td mat-cell *matCellDef="let row" class="toggle-cell">
+    <div class="toggle-wrapper">
+      <button class="toggle-button" [class.on]="row.stopSelling === true"
+              (click)="toggleRecordStatus(row)">
+        {{ row.stopSelling === true ? 'ON' : 'OFF' }}
+      </button>
+    </div>
+  </td>
+</ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="columnsToDisplay.length">No data to Display</td>
+    </tr>
+  </table>
+
+  <mat-paginator class="shadow-sm" [pageSizeOptions]="[25, 50, 100]" showFirstLastButtons></mat-paginator>
+</div>

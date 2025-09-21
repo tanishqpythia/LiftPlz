@@ -1,0 +1,25 @@
+<div class="card" [ngStyle]="{'background': 'var(' + bg_color + ')'}">
+  <div class="card-header">
+    <div class="media" *ngIf="is_image">
+      <img [src]="media_content" [alt]="heading" class="logo-img" />
+    </div>
+    <div class="media icon" *ngIf="is_mat_icon || is_google_icon">
+      <mat-icon>{{ media_content }}</mat-icon>
+    </div>
+    <div class="media text-only" *ngIf="!(is_image || is_google_icon || is_mat_icon)">
+      <h2 class="heading">{{ heading }}</h2>
+    </div>
+    <div *ngIf="(is_image || is_mat_icon || is_google_icon)" class="heading-group">
+      <h2 class="heading">{{ heading }}</h2>
+      <p *ngIf="sub_heading" class="sub-heading">{{ sub_heading }}</p>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p *ngIf="description" class="description">{{ description }}</p>
+
+    <button *ngIf="is_button" class="card-button">
+      <a [routerLink]="button_route">{{ button_text }}</a>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="footer shadow p-2">
+  <div class="container content">
+    <div class="footer-card-list">
+      <div class="footer-card">
+        <div class="logo p-1">
+          <p class="fs-4 heading-text">{{ infoFooterContent.introTitle }}</p>
+        </div>
+        <hr class="my-1">
+        <div class="content p-1">
+          <p class="heading-text">
+            <span style="font-weight: 500;">{{ infoFooterContent.introStatementBold }}</span><br>
+            {{ infoFooterContent.introStatement }}
+          </p>
+        </div>
+      </div>
+      <div class="footer-card">
+        <div class="logo p-1">
+          <p class="heading-text fs-4">Contact Information</p>
+        </div>
+        <hr class="my-1">
+        <div class="content p-1">
+          <div class="content-card" *ngFor="let contact of infoFooterContent.contactInfo; let i = index">
+            <div class="card-title-box">
+              <mat-icon>{{ contact.maticon }}</mat-icon>
+              <span class="heading-title">{{ contact.title }}</span>
+            </div>
+            <p class="heading-text">{{ contact.value }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Explore Links Card -->
+      <div class="footer-card">
+        <div class="logo p-1">
+          <p class="heading-text fs-4">Explore</p>
+        </div>
+        <hr class="my-1">
+        <div class="content p-1">
+          <li class="heading-text content-card my-1" *ngFor="let site of infoFooterContent.explor; let i = index">
+            <a class="heading-text" [routerLink]="site.url">{{ site.name }}</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

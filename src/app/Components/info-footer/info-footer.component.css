@@ -1,0 +1,124 @@
+.footer{
+    background: var(--header);
+    /* max-width: 100vw; */
+    height: auto;
+    max-width: 90%;
+    margin: auto;
+    border-radius: 30px 30px 30px 30px;
+}
+
+
+.heading-text{
+    color: var( --footer-font-secondary);
+}
+.logo .heading-text{
+    color: var(--footer-title);
+    /* color: var(--icon-secondary-color); */
+}
+
+
+.socialmedia-icon img{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+
+
+.footer-card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.33% - 20px);
+background: transparent;
+border: 0;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .logo {
+    flex: 0 0 auto;
+    width: auto; /* Adjust the width as needed */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  .content-card {
+    display: flex;
+    flex-direction: column;  /* Stack the icon, title, and value vertically */
+    align-items: center;     /* Keep icon, title, and value centered horizontally */
+}
+
+.card-title-box {
+    display: flex;
+    align-items: center;     /* Keep icon and title aligned */
+    justify-content: center; /* Center icon and title horizontally */
+}
+
+.content-card mat-icon {
+    color: var(--icon-secondary-color); /* Keep original color */
+}
+
+.heading-title {
+    color: var(--footer-font); /* Keep original font color */
+    font-weight: 500; /* Keep original font weight */
+    margin-left: .5rem;
+}
+
+.heading-text {
+    color: var(--footer-font-secondary); /* Keep original color */
+}
+
+
+  .heading-title{
+    color: var(--footer-font);
+  }
+  .content h2 {
+    margin-top: 0;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 767px) {
+    .footer-card {
+      flex-direction: column;
+    }
+  
+    .logo {
+      order: -1; /* Logo section first */
+    }
+  
+    .content {
+      order: 1; /* Content section second */
+    }
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 767px) {
+    .footer-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  /* Media query for extra small screens (e.g., mobile devices) */
+  @media (max-width: 479px) {
+    .footer-card {
+      width: 100%;
+    }
+    
+    .logo {
+      order: 1; /* Logo section first */
+    }
+    
+    .content {
+      order: 2; /* Content section second */
+    }
+  }
+  

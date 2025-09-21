@@ -1,0 +1,82 @@
+
+<!-- Admin Card Pages -->
+<div class="section">
+  <app-section-headings 
+    heading="The Admin Dashboard" 
+    sub_heading="Click a card below to access particular admin service">
+  </app-section-headings>
+
+  <!-- Loop through categories -->
+  <ng-container *ngFor="let category of (admin_page_services | keyvalue)">
+    <h3 class="service-category">{{ category.key }}</h3>
+
+    <div class="card-grid">
+      <div 
+        class="service-card" 
+        *ngFor="let service of category.value"
+        (click)="navigateTo(service.service_url)">
+
+        <div class="service-icon">
+          <mat-icon *ngIf="service.service_icon">{{ service.service_icon }}</mat-icon>
+          <mat-icon *ngIf="!service.service_icon">apps</mat-icon>
+        </div>
+
+        <div class="service-details">
+          <p class="service-title">{{ service.service_name }}</p>
+          <p class="service-description">{{ service.service_description }}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<mat-tab-group dynamicHeight animationDuration="1200ms" fitInkBarToContent>
+  <mat-tab label="Users Login Status">
+    <div class="section-wrapper bg-alt-1">
+      <app-section-headings heading="Users Login Status" sub_heading=""></app-section-headings>
+      <app-display-table 
+        [tableData]="loginStatusDisplayTableData.tableData.data" 
+        [displayedColumns]="loginStatusDisplayTableData.tableData.columns"
+        [summaryData]="loginStatusDisplayTableData.summary">
+      </app-display-table>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="All Holdings">
+    <div class="section-wrapper bg-alt-2">
+      <app-section-headings heading="All Holdings" sub_heading=""></app-section-headings>
+      <app-display-table 
+        [tableData]="allHoldingDisplayTableData.tableData.data" 
+        [displayedColumns]="allHoldingDisplayTableData.tableData.columns"
+        [summaryData]="allHoldingDisplayTableData.summary">
+      </app-display-table>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Stock Near Target">
+    <div class="section-wrapper bg-alt-1">
+      <app-section-headings heading="Stock Near Target" sub_heading=""></app-section-headings>
+      <app-display-table 
+        [tableData]="stockNearTargetDisplayTableData.tableData.data" 
+        [displayedColumns]="stockNearTargetDisplayTableData.tableData.columns"
+        [summaryData]="stockNearTargetDisplayTableData.summary">
+      </app-display-table>
+    </div>
+  </mat-tab>
+</mat-tab-group> -->

@@ -1,0 +1,602 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+/* :root {
+  --header: #8FC1E3; 
+  --header-secondary: #5085A5; 
+  --header-title: #F7F9FB; 
+  --header-font: #31708e; 
+  --header-font-secondary: #0b2205; 
+
+  --footer: #8FC1E3;
+  --footer-secondary: #5085A5;
+  --footer-title: #F7F9FB;
+  --footer-font: #31708e; 
+  --footer-font-secondary: #0b2205; 
+
+  --body-bg: #F7F9FB; 
+  --body-bg-secondary: #E1E8F0; 
+
+  --body-heading: #31708e; 
+  --body-heading-secondary: #5085A5; 
+  --body-heading-third: #284021; 
+
+  --body-font: #2A4C64; 
+  --body-font-secondary: #122c44;
+  --body-font-third: #485f43; 
+
+  --body-component-bg: #F0F3F5; 
+  --body-component-bg-secondary: #9ac8e7; 
+  --body-component-bg-third: #72a2c0; 
+  --body-component-bg-transparent: #ffffff00; 
+
+  --body-component-heading: #31708e;
+  --body-component-heading-secondary: #5085A5; 
+  --body-component-heading-third: #687864; 
+
+  --body-component-font: #031c28;
+  --body-component-font-secondary: #000000;
+  --body-component-font-third: #03162a; 
+
+  --icon-primary-color : #de6bba;
+  --icon-secondary-color : #e18a70;
+
+  --button-bg-primary-color:#72a2c0;
+  --button-primary-text-color:#03162a;
+  --button-bg-primary-hover-color:#8FC1E3;
+  --button-bg-primary-focus-color:#03162a;
+  --button-bg-primary-active-color:#F0F3F5;
+
+  --button-bg-secondary-color:#72a2c0;
+  --button-secondary-text-color:#03162a;
+  --button-bg-secondary-hover-color:#8FC1E3;
+  --button-bg-secondary-focus-color:#03162a;
+  --button-bg-secondary-active-color:#F0F3F5;
+
+  --img-greyScale: grayscale(1); 
+
+--header-font-size-large: 2rem; 
+--header-font-size-medium: 1.5rem; 
+--header-font-size-small: 1.25rem; 
+
+--body-font-size-large: 1.125rem; 
+--body-font-size-medium: 1rem;
+--body-font-size-small: 0.875rem; 
+
+
+--component-font-size-large: 1.25rem; 
+--component-font-size-medium: 1rem; 
+--component-font-size-small: 0.875rem; 
+
+
+--font-size-extra-large: 2.5rem; 
+--font-size-extra-small: 0.75rem; 
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --header: linear-gradient(135deg, #5085A5, #8FC1E3); 
+  --header-secondary: linear-gradient(135deg, #6CA6C1, #27496D);
+  --header-title: #F7F9FB; 
+  --header-font: #ffffff; 
+  --header-font-secondary: #dbe9f4;
+
+  --footer: linear-gradient(135deg, #8FC1E3, #72a2c0);
+  --footer-secondary: linear-gradient(135deg, #5085A5, #2A4C64);
+  --footer-title: #F7F9FB; 
+  --footer-font: #ffffff; 
+  --footer-font-secondary: #dbe9f4;
+
+  --body-bg: linear-gradient(180deg, #F7F9FB, #E1E8F0);
+  --body-bg-secondary: linear-gradient(135deg,#abbfd5, #a6ccf8);
+  
+  --body-heading: #2A4C64;
+  --body-heading-secondary: #3d6d92;
+  --body-heading-third: #284021;
+
+  --body-font: #2A4C64;
+  --body-font-secondary: #3b5162;
+  --body-font-third: #546d5b;
+
+  --body-component-bg: linear-gradient(135deg, #ffffff, #f2f7fb);
+  --body-component-bg-secondary: linear-gradient(135deg, #9ac8e7, #72a2c0);
+  --body-component-bg-third: linear-gradient(135deg, #72a2c0, #5085A5);
+  --body-component-bg-transparent: transparent;
+
+  --body-component-heading: #2A4C64;
+  --body-component-heading-secondary: #3d6d92;
+  --body-component-heading-third: #5a6b5d;
+
+  --body-component-font: #031c28;
+  --body-component-font-secondary: #1a2d3a;
+  --body-component-font-third: #3b4650;
+
+  --icon-primary-color: #4a90e2;   
+  --icon-secondary-color: #e67aa1; 
+
+  --button-bg-primary-color: linear-gradient(135deg, #72a2c0, #5085A5);
+  --button-primary-text-color: #fff;
+  --button-bg-primary-hover-color: linear-gradient(135deg, #8FC1E3, #72a2c0);
+  --button-bg-primary-focus-color: #03162a;
+  --button-bg-primary-active-color: #F0F3F5;
+
+  --button-bg-secondary-color: linear-gradient(135deg, #9ac8e7, #72a2c0);
+  --button-secondary-text-color: #fff;
+  --button-bg-secondary-hover-color: linear-gradient(135deg, #8FC1E3, #72a2c0);
+  --button-bg-secondary-focus-color: #03162a;
+  --button-bg-secondary-active-color: #F0F3F5;
+
+  --img-greyScale: grayscale(1);
+
+  --header-font-size-large: 2rem;
+  --header-font-size-medium: 1.5rem;
+  --header-font-size-small: 1.25rem;
+
+  --body-font-size-large: 1.125rem;
+  --body-font-size-medium: 1rem;
+  --body-font-size-small: 0.875rem;
+
+  --component-font-size-large: 1.25rem;
+  --component-font-size-medium: 1rem;
+  --component-font-size-small: 0.875rem;
+
+  --font-size-extra-large: 2.5rem;
+  --font-size-extra-small: 0.75rem;
+} 
+
+
+
+
+
+
+
+
+
+/* grok */
+/* :root {
+  --color-primary: #B53B1B;
+  --color-secondary: #D95F3A;
+  --color-tertiary: #FFF7EB;
+  --color-quaternary: #FCE1CC;
+  --header: linear-gradient(135deg, var(--color-tertiary), var(--color-quaternary));
+  --header-secondary: linear-gradient(135deg, var(--color-quaternary), var(--color-secondary));
+  --header-title: #17202A;
+  --header-font: #28323D;
+  --header-font-secondary: #4B5765;
+  --footer: linear-gradient(135deg, var(--color-tertiary), var(--color-quaternary));
+  --footer-secondary: linear-gradient(135deg, var(--color-quaternary), var(--color-secondary));
+  --footer-title: #17202A;
+  --footer-font: #28323D;
+  --footer-font-secondary: #4B5765;
+  --body-bg: linear-gradient(180deg, #f3e1e7, #f3ebf2);
+  --body-bg-secondary: linear-gradient(135deg, var(--color-quaternary), var(--color-tertiary));
+  --body-heading: #17202A;
+  --body-heading-secondary: #37414C;
+  --body-heading-third: #576574;
+  --body-font: #28323D;
+  --body-font-secondary: #4B5765;
+  --body-font-third: #697383;
+  --body-component-bg: linear-gradient(135deg, #FFFFFF, var(--color-tertiary));
+  --body-component-bg-secondary: linear-gradient(135deg, var(--color-quaternary), var(--color-tertiary));
+  --body-component-bg-third: linear-gradient(135deg, var(--color-quaternary), var(--color-secondary));
+  --body-component-bg-transparent: transparent;
+  --body-component-heading: #17202A;
+  --body-component-heading-secondary: #37414C;
+  --body-component-heading-third: #576574;
+  --body-component-font: #28323D;
+  --body-component-font-secondary: #4B5765;
+  --body-component-font-third: #697383;
+  --card-bg-primary: linear-gradient(135deg, #FFFFFF, var(--color-tertiary));
+  --card-bg-secondary: linear-gradient(135deg, var(--color-quaternary), var(--color-tertiary));
+  --card-bg-accent: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+  --card-border-primary: var(--color-quaternary);
+  --card-border-secondary: var(--color-secondary);
+  --card-shadow: 0 4px 12px rgba(39, 50, 62, 0.1);
+  --icon-primary-color: var(--color-primary);
+  --icon-secondary-color: var(--color-secondary);
+  --button-bg-primary-color: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  --button-primary-text-color: #FFFFFF;
+  --button-bg-primary-hover-color: linear-gradient(135deg, #C94C2C, #E86F4A);
+  --button-bg-primary-focus-color: #2E1408;
+  --button-bg-primary-active-color: var(--color-tertiary);
+  --button-bg-secondary-color: linear-gradient(135deg, var(--color-secondary), var(--color-quaternary));
+  --button-secondary-text-color: #FFFFFF;
+  --button-bg-secondary-hover-color: linear-gradient(135deg, #E86F4A, #FBCFAB);
+  --button-bg-secondary-focus-color: #2E1408;
+  --button-bg-secondary-active-color: var(--color-tertiary);
+  --img-greyScale: grayscale(1);
+  --header-font-size-large: 2rem;
+  --header-font-size-medium: 1.5rem;
+  --header-font-size-small: 1.25rem;
+  --body-font-size-large: 1.125rem;
+  --body-font-size-medium: 1rem;
+  --body-font-size-small: 0.875rem;
+  --component-font-size-large: 1.25rem;
+  --component-font-size-medium: 1rem;
+  --component-font-size-small: 0.875rem;
+  --font-size-extra-large: 2.5rem;
+  --font-size-extra-small: 0.75rem;
+} */
+
+
+
+/* gork 2 */
+/* :root {
+  --header: linear-gradient(135deg, #FFF7EB, #FCE1CC);
+  --header-secondary: linear-gradient(135deg, #FBCFAB, #F7A680);
+  --header-title: #17202A;
+  --header-font: #28323D;
+  --header-font-secondary: #4B5765;
+  --footer: linear-gradient(135deg, #FFF7EB, #FCE1CC);
+  --footer-secondary: linear-gradient(135deg, #FBCFAB, #F7A680);
+  --footer-title: #17202A;
+  --footer-font: #28323D;
+  --footer-font-secondary: #4B5765;
+  --body-bg: linear-gradient(180deg, #FFFFFF, #F9F2EA);
+  --body-bg-secondary: linear-gradient(135deg, #F9E7D2, #F6D7B8);
+  --body-heading: #17202A;
+  --body-heading-secondary: #37414C;
+  --body-heading-third: #576574;
+  --body-font: #28323D;
+  --body-font-secondary: #4B5765;
+  --body-font-third: #697383;
+  --body-component-bg: linear-gradient(135deg, #FFFFFF, #FDF8F1);
+  --body-component-bg-secondary: linear-gradient(135deg, #F9E7D2, #F6D7B8);
+  --body-component-bg-third: linear-gradient(135deg, #F6D7B8, #F4C7A0);
+  --body-component-bg-transparent: transparent;
+  --body-component-heading: #17202A;
+  --body-component-heading-secondary: #37414C;
+  --body-component-heading-third: #576574;
+  --body-component-font: #28323D;
+  --body-component-font-secondary: #4B5765;
+  --body-component-font-third: #697383;
+  --card-bg-primary: linear-gradient(135deg, #FFFFFF, #F9F2EA);
+  --card-bg-secondary: linear-gradient(135deg, #F6E8D5, #F2D8BB);
+  --card-bg-accent: linear-gradient(135deg, #FBCFAB, #F7A680);
+  --card-border-primary: #E8D6C2;
+  --card-border-secondary: #F4C7A0;
+  --card-shadow: 0 4px 12px rgba(39, 50, 62, 0.1);
+  --icon-primary-color: #B53B1B;
+  --icon-secondary-color: #D95F3A;
+  --button-bg-primary-color: linear-gradient(135deg, #B53B1B, #D95F3A);
+  --button-primary-text-color: #FFFFFF;
+  --button-bg-primary-hover-color: linear-gradient(135deg, #C94C2C, #E86F4A);
+  --button-bg-primary-focus-color: #2E1408;
+  --button-bg-primary-active-color: #FDF8F1;
+  --button-bg-secondary-color: linear-gradient(135deg, #D95F3A, #F7A680);
+  --button-secondary-text-color: #FFFFFF;
+  --button-bg-secondary-hover-color: linear-gradient(135deg, #E86F4A, #FBCFAB);
+  --button-bg-secondary-focus-color: #2E1408;
+  --button-bg-secondary-active-color: #FDF8F1;
+  --img-greyScale: grayscale(1);
+  --header-font-size-large: 2rem;
+  --header-font-size-medium: 1.5rem;
+  --header-font-size-small: 1.25rem;
+  --body-font-size-large: 1.125rem;
+  --body-font-size-medium: 1rem;
+  --body-font-size-small: 0.875rem;
+  --component-font-size-large: 1.25rem;
+  --component-font-size-medium: 1rem;
+  --component-font-size-small: 0.875rem;
+  --font-size-extra-large: 2.5rem;
+  --font-size-extra-small: 0.75rem;
+} */
+
+
+
+
+
+/* gemini */
+/* :root {
+  --header: linear-gradient(135deg, #546b7a, #7f929d, #d89b88);
+  --header-secondary: linear-gradient(135deg, #5C6A72, #2D3A42);
+  --header-title: #F5F5F5; 
+  --header-font: #FFFFFF; 
+  --header-font-secondary: #E0E0E0;
+
+  --footer: linear-gradient(135deg, #CE856E, #2D3A42);
+  --footer-secondary: linear-gradient(135deg, #2D3A42, #5C6A72);
+  --footer-title: #F5F5F5; 
+  --footer-font: #FFFFFF; 
+  --footer-font-secondary: #E0E0E0;
+
+  --body-bg: linear-gradient(180deg, #F9F7F3, #F2EFE9);
+  --body-bg-secondary: linear-gradient(135deg, #F2EFE9, #F9F7F3);
+  
+  --body-heading: #2D3A42;
+  --body-heading-secondary: #5C6A72;
+  --body-heading-third: #CE856E;
+
+  --body-font: #2D3A42;
+  --body-font-secondary: #5C6A72;
+  --body-font-third: #7A7A7A;
+
+  --body-component-bg: linear-gradient(135deg, #FFFFFF, #F8F5F1);
+  --body-component-bg-secondary: linear-gradient(135deg, #CE856E, #B87661);
+  --body-component-bg-third: linear-gradient(135deg, #2D3A42, #5C6A72);
+  --body-component-bg-transparent: transparent;
+
+  --body-component-heading: #2D3A42;
+  --body-component-heading-secondary: #5C6A72;
+  --body-component-heading-third: #B87661;
+
+  --body-component-font: #2D3A42;
+  --body-component-font-secondary: #5C6A72;
+  --body-component-font-third: #7A7A7A;
+
+  --icon-primary-color: #2D3A42;
+  --icon-secondary-color: #CE856E;
+
+  --button-bg-primary-color: linear-gradient(135deg, #2D3A42, #5C6A72);
+  --button-primary-text-color: #FFFFFF;
+  --button-bg-primary-hover-color: linear-gradient(135deg, #5C6A72, #2D3A42);
+  --button-bg-primary-focus-color: #2D3A42;
+  --button-bg-primary-active-color: #CE856E;
+
+  --button-bg-secondary-color: linear-gradient(135deg, #CE856E, #B87661);
+  --button-secondary-text-color: #FFFFFF;
+  --button-bg-secondary-hover-color: linear-gradient(135deg, #B87661, #CE856E);
+  --button-bg-secondary-focus-color: #2D3A42;
+  --button-bg-secondary-active-color: #F2EFE9;
+
+  --img-greyScale: grayscale(0.1);
+
+  --header-font-size-large: 2rem;
+  --header-font-size-medium: 1.5rem;
+  --header-font-size-small: 1.25rem;
+
+  --body-font-size-large: 1.125rem;
+  --body-font-size-medium: 1rem;
+  --body-font-size-small: 0.875rem;
+
+  --component-font-size-large: 1.25rem;
+  --component-font-size-medium: 1rem;
+  --component-font-size-small: 0.875rem;
+
+  --font-size-extra-large: 2.5rem;
+  --font-size-extra-small: 0.75rem;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* figma */
+:root {
+  /* --header: linear-gradient(135deg, #d2cddf, #c4d4e8, #acbed8);
+  --header-secondary: linear-gradient(135deg, #e9f0fb, #d7dcec, #cbcde4, #dcd2eb);
+  --header-title: #1d2530; 
+  --header-font: #2a3440; 
+  --header-font-secondary: #5a6c80;
+
+  --footer: linear-gradient(135deg, #fedfee, #ead7d0, #dcbab5);
+  --footer-secondary: linear-gradient(135deg, #e6c9d7, #ead7d0, #dcbab5);
+  --footer-title: #1d2530;
+  --footer-font: #2a3440;
+  --footer-font-secondary: #5a6c80; */
+
+  /* --body-bg: linear-gradient(135deg,  #fcf5f9, #fef4fe, #fff4f4); */
+  /* --body-bg-secondary: linear-gradient(135deg, #d3d6eb, #dde1eb, #ecdfdf);
+
+  --body-heading: #1d2530;
+  --body-heading-secondary: #205c56;
+  --body-heading-third: #5a4f70;
+
+  --body-font: #2a3440;
+  --body-font-secondary: #4a5a6d;
+  --body-font-third: #6b7c8c;
+
+  --body-component-bg: linear-gradient(135deg, #ebeef4, #f7f9fc, #ffffff);
+  --body-component-bg-secondary: linear-gradient(135deg, #eff3f8, #e2e8f2, #f0f4f9);
+  --body-component-bg-third: linear-gradient(135deg, #e3f4f0, #dffcf5, #e8f3f0);
+  --body-component-bg-transparent: transparent;
+
+  --body-component-heading: #1d2530;
+  --body-component-heading-secondary: #205c56;
+  --body-component-heading-third: #5a4f70;
+
+  --body-component-font: #2a3440;
+  --body-component-font-secondary: #4a5a6d;
+  --body-component-font-third: #6b7c8c;
+
+  /* --icon-primary-color: #28746e;   
+  --icon-secondary-color: #6d5ca5;  */
+
+  /* --button-bg-primary-color: linear-gradient(135deg, #28746e, #3fa59c, #6fc2b6);
+  --button-primary-text-color: #fff;
+  --button-bg-primary-hover-color: linear-gradient(135deg, #3fa59c, #6fc2b6, #89d2c8);
+  --button-bg-primary-focus-color: #1f5955;
+  --button-bg-primary-active-color: #edf2f6;
+
+  --button-bg-secondary-color: linear-gradient(135deg, #6d5ca5, #8b7cc4, #a393d9);
+  --button-secondary-text-color: #fff;
+  --button-bg-secondary-hover-color: linear-gradient(135deg, #8b7cc4, #a393d9, #b8a9ea);
+  --button-bg-secondary-focus-color: #4e4374;
+  --button-bg-secondary-active-color: #f7f9fb;
+
+  --img-greyScale: grayscale(0.05);  */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --header: linear-gradient(135deg, #5a7d5a, #8da68d);
+  --header-secondary: linear-gradient(135deg, #4c6b4c, #2f4630);
+  --header-title: #f5f5f2;
+  --header-font: #ffffff;
+  --header-font-secondary: #e0e5dd;
+
+  --footer: linear-gradient(135deg, #8da68d, #5a7d5a);
+  --footer-secondary: linear-gradient(135deg, #2f4630, #3e5740);
+  --footer-title: #f5f5f2;
+  --footer-font: #ffffff;
+  --footer-font-secondary: #d6dbd2;
+
+  --body-bg: linear-gradient(180deg, #f6faf7, #edf5ef);
+  --body-bg-secondary: linear-gradient(135deg, #dfe9e2, #c9d8cc);
+
+  --body-heading: #2f4630;
+  --body-heading-secondary: #4c6b4c;
+  --body-heading-third: #5a7d5a;
+
+  --body-font: #2e2e2a;
+  --body-font-secondary: #4a4a44;
+  --body-font-third: #66665f;
+
+  --body-component-bg: linear-gradient(135deg, #ffffff, #f9fbf8);
+  --body-component-bg-secondary: linear-gradient(135deg, #e4ede7, #c9d8cc);
+  --body-component-bg-third: linear-gradient(135deg, #b5cbb5, #7d9479);
+  --body-component-bg-transparent: transparent;
+
+  --body-component-heading: #2f4630;
+  --body-component-heading-secondary: #4c6b4c;
+  --body-component-heading-third: #5a7d5a;
+
+  --body-component-font: #2a2d28;
+  --body-component-font-secondary: #404640;
+  --body-component-font-third: #606860;
+
+  --icon-primary-color: #7d9479;
+  --icon-secondary-color: #d9a066;
+
+  --button-bg-primary-color: linear-gradient(135deg, #5a7d5a, #8da68d);
+  --button-primary-text-color: #fff;
+  --button-bg-primary-hover-color: linear-gradient(135deg, #7d9479, #aabfa7);
+  --button-bg-primary-focus-color: #2f4630;
+  --button-bg-primary-active-color: #edf0ea;
+
+  --button-bg-secondary-color: linear-gradient(135deg, #d9a066, #b37436);
+  --button-secondary-text-color: #fff;
+  --button-bg-secondary-hover-color: linear-gradient(135deg, #e6b77a, #c78544);
+  --button-bg-secondary-focus-color: #7a4a1f;
+  --button-bg-secondary-active-color: #f9f5f0;
+
+  --img-greyScale: grayscale(0.3);
+
+  --header-font-size-large: 2rem;
+  --header-font-size-medium: 1.5rem;
+  --header-font-size-small: 1.25rem;
+
+  --body-font-size-large: 1.125rem;
+  --body-font-size-medium: 1rem;
+  --body-font-size-small: 0.875rem;
+
+  --component-font-size-large: 1.25rem;
+  --component-font-size-medium: 1rem;
+  --component-font-size-small: 0.875rem;
+
+  --font-size-extra-large: 2.5rem;
+  --font-size-extra-small: 0.75rem;
+
+  --font-family-heading: 'Merriweather', serif;
+  --font-family-body: 'Lato', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mat-mdc-form-field-infix{
+padding: 12px !important;
+min-height: 47px !important;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-menu-list  a  span ::-webkit-scrollbar {
+  display: none;
+}
+
+
+html,
+  body {
+    /* height: 100%; */
+    background: var(--body-bg);
+    text-align: justify;
+    scroll-behavior: smooth;
+  }
+
+  
+
+
+
+
+
+
+  ::ng-deep .mat-bottom-sheet-container {
+  background: transparent !important;
+  box-shadow: none !important;
+}

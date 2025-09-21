@@ -1,0 +1,10 @@
+<div class="notification" [ngClass]="data?.notificationType">
+    <span class="notificationText" matSnackBarLabel>
+        {{ data?.message || 'No message provided' }}
+    </span>
+    <span class="notificationText" matSnackBarActions>
+        <button mat-button matSnackBarAction (click)="snackBarRef.dismissWithAction()" class="notificationText">
+            {{ data?.action || 'Dismiss' }}
+        </button>
+    </span>
+</div>

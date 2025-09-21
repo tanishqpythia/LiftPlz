@@ -1,0 +1,50 @@
+<!-- <p>user dashboard works</p> -->
+<app-section-headings heading="User Dashboard" sub_heading=""></app-section-headings>
+
+
+<div class="container">
+  <div class="content-wrapper">
+    <div class="chart shadow">
+      <div class="dashboardCardHeadingDiv shadow-sm container-fluid py-2" data-aos="zoom-in" data-aos-duration="200">
+        <h2 class="dashboardCard-title">Profit and Loss Chart</h2>
+      </div>
+      <div id="chart" class="container p-2">
+        <app-chart [chartOption]="chartOptions"></app-chart>
+      </div>
+    </div>
+    <div class="actionDiv shadow">
+      <div class="dashboardCardHeadingDiv shadow-sm container-fluid py-2" data-aos="zoom-in" data-aos-duration="200">
+        <h2 class="dashboardCard-title">Strategies Activation Panel</h2>
+      </div>
+      <div class="p-2 my-3">
+        <div class="card-wrapper">
+          @for (action of actions; track $index) {
+          <div class="actionCard p-2 my-1 shadow-sm">
+            <span class="card-title fs-6">{{ action.title }}</span>
+            <div class="wrapper">
+              <div class="button-outer-wrapper">
+                <div class="button-inner-wrapper">
+                  <button class="toggle-button" [class.on]="action.isOn" (click)="toggleButtonClick(action)">
+                    {{ action.isOn ? action.activeLabel : action.inactiveLabel }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tablesDiv shadow">
+    <div class="dashboardCardHeadingDiv shadow-sm container-fluid py-2">
+      <h2 class="dashboardCard-title">Portfolio Holdings</h2>
+    </div>
+    <div class="p-2">
+      <app-display-table [tableData]="DisplayTableData.tableData.data"
+        [displayedColumns]="DisplayTableData.tableData.columns" [summaryData]="DisplayTableData.summary"
+        data-aos="flip-up" data-aos-duration="300">
+      </app-display-table>
+    </div>
+  </div>
+</div>

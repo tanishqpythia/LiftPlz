@@ -1,0 +1,107 @@
+*{
+    background: transparent;
+}
+.container {
+    padding: 20px;
+    border-radius: 5px;
+    background:transparent;
+    max-width: 350px;
+  }
+
+  
+  .signin-container img {
+    width: 150px;
+  }
+  
+  .forgot-password-link {
+    color: #007bff; 
+  }
+  
+  .register-link {
+    color: #28a745; 
+  }
+
+  .btn{
+    width: 80%;
+    background: var(--header-secondary);
+    color: var(--header-title);
+    border: 0px;
+  }
+  
+  .form-grid  mat-form-field{
+    min-width: 100%;
+  }
+
+
+/* Card Container */
+.card-wrapper {
+  perspective: 1000px; /* Enable 3D perspective for the flip effect */
+}
+
+/* The card's inner wrapper */
+.card-inner {
+  max-width: 400px;
+  margin: auto;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg); /* Initially facing the back */
+  animation: flip 1s forwards; /* Flip animation after page load */
+  transition: transform 1s ease-in-out;
+   background: var(--body-component-bg, #fff);
+}
+
+/* Flip animation */
+@keyframes flip {
+  0% {
+    transform: rotateY(180deg); /* Start facing the back */
+  }
+  100% {
+    transform: rotateY(0deg); /* Flip to the front */
+  }
+}
+
+
+
+
+/* Front side of the card */
+.front {
+  z-index: 2;
+   background: var(--body-component-bg, #fff);
+  backface-visibility: hidden;
+}
+
+/* Back side of the card */
+.back {
+  transform: rotateY(180deg); /* Initially positioned to be the back */
+  background: rgb(255, 255, 255);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+/* Back face content */
+.back-face {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+
+
+
+.password-toggle-btn {
+  background: transparent; /* Ensure the background is transparent */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+}
+
+
+
+
+
+

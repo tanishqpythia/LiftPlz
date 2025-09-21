@@ -1,0 +1,25 @@
+<div class="content p-0">
+  <div class="first-content p-0">
+    <div class="image-wrapper p-0" data-aos="fade-in" data-aos-delay="500" data-aos-duration="1500">
+      <img id="bg-image" src="../../../assets/Gemini_Generated_Image_wc41bxwc41bxwc41.png" alt="">
+    </div>
+
+    <div class="mask p-0"></div> 
+
+    <div class="text-container p-0">
+      <img class="mb-2" src="../../../assets/liftPlzLogoNoBG.png" alt="" style="height: 7rem;width: 7rem;" data-aos="zoom-in" data-aos-duration="9000" data-aos-delay="500">
+      <h1 class="text fs-1" data-aos="zoom-in" data-aos-duration="7000" data-aos-delay="400">{{welcome_text}}</h1>
+      <h3 class="fs-3" data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="top-bottom">{{homepage_intro}}</h3>
+      <h4 class="fs-4" data-aos="fade-up" data-aos-delay="800" data-aos-anchor-placement="top-bottom">
+        <a class="text login-text invite p-2 font-weight-bold" [routerLink]="'/signIn'">Login to use</a>
+      </h4>
+    </div>
+  </div>
+
+  <section>
+    <app-our-services></app-our-services>
+    <app-emphasizer></app-emphasizer>
+    <!-- <app-latest-blogs></app-latest-blogs> -->
+    <app-pricings></app-pricings>
+  </section>
+</div>

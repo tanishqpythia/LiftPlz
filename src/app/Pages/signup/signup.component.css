@@ -1,0 +1,205 @@
+
+*{
+    background: transparent;
+}
+
+/* Container adjustments for large screens */
+.container {
+  padding: 20px;
+  border-radius: 5px;
+  background: transparent;
+  max-width: 900px; /* Increased for side-by-side layout */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+}
+
+.form-grid  mat-form-field{
+  min-width: 100%;
+}
+
+
+
+.form-grid .form-check {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.form-grid .btn {
+  grid-column: span 2; 
+  justify-self: center; 
+  width: 80%; 
+  background: var(--header-secondary);
+  color: var(--header-title);
+}
+
+.signin-container img {
+  width: 150px;
+}
+
+.forgot-password-link {
+  color: #007bff;
+}
+
+.register-link {
+  color: #28a745;
+}
+
+
+.btn{
+  width: 80%;
+  background: var(--header-secondary);
+  color: var(--header-title);
+}
+  
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px; /* Space between columns and rows */
+}
+
+.col-md-6 {
+  flex: 0 0 48%;
+  max-width: 48%;
+  min-width: 300px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.doc-upload-row {
+  margin-top: 24px; /* Space from previous section */
+  margin-bottom: 16px;
+  justify-content: flex-start;
+}
+
+.doc-upload-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 16px #eee;
+  padding: 18px 18px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.doc-upload-card:hover {
+  box-shadow: 0 6px 20px #e2e2e2;
+}
+
+.doc-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  color: #363636;
+}
+
+.doc-label mat-icon {
+  margin-right: 10px;
+  font-size: 24px;
+  color: #ef4fa7;
+}
+
+.required-star {
+  color: #ef4fa7;
+  margin-left: 0.1em;
+}
+
+.custom-file-input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 7px 10px;
+  border: 1.5px solid #d1d1d1;
+  border-radius: 6px;
+  background-color: #fafbfc;
+  color: #333;
+  margin-top: 5px;
+  transition: border-color 0.2s;
+}
+
+.custom-file-input:focus {
+  border-color: #ef4fa7;
+  outline: none;
+  background: #fff7fc;
+}
+
+
+
+  
+
+.card-wrapper {
+    perspective: 1000px; 
+  }
+  
+  .card-inner {
+    max-width: 900px;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg); 
+    animation: flip 1s forwards; 
+    transition: transform 1s ease-in-out;
+     background: var(--body-component-bg, #fff);
+  }
+  
+  @keyframes flip {
+    0% {
+      transform: rotateY(180deg); /* Start facing the back */
+    }
+    100% {
+      transform: rotateY(0deg); /* Flip to the front */
+    }
+  }
+  
+  /* Mobile adjustments */
+@media (max-width: 768px) {
+  /* Full-width for single-column fields */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+}
+.form-grid .btn {
+  align-self: center; /* Ensure button spans two columns */
+  justify-self: center; /* Center the button horizontally */
+}
+
+  .card-inner {
+      /* max-width: 350px; Adjust width for smaller screens */
+       background: var(--body-component-bg, #fff);
+  }
+}
+  
+  
+  .front {
+    z-index: 2;
+     background: var(--body-component-bg, #fff);
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    transform: rotateY(180deg); 
+    background: rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+  }
+  
+  .back-face {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  

@@ -1,0 +1,80 @@
+body {
+    background: var(--body-bg);
+    color: var(--body-font);
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+.application-header {
+    position: sticky;
+    top: 0;
+    max-width: 95%;  /* Make the header 95% of the screen width */
+    margin: 0 auto;  /* Center the header horizontally */
+    z-index: 100;
+    padding: 0;
+    border: 1px;  /* Border for the header */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;  /* Smooth hide/show effect */
+}
+  
+  .application-header.hidden {
+    transform: translateY(-100%); /* Hide the header by moving it upwards */
+  }
+  
+  
+  
+  
+  /* Content Area */
+  .content {
+    padding: 0;
+    margin: 0;
+  }
+  
+
+  
+.scroll-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9;
+    padding: .4rem .4rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: var(--header-secondary);
+    color: var(--header-title);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .scroll-to-top:hover {
+    background: var(--header);
+    color: var(--body-font);
+    opacity: 0.9;
+  }
+  
+  .scroll-to-top[hidden] {
+    display: none;
+  }
+  
+.infoFooter{
+  margin-top: 1.5rem;
+
+} 
+.all-web-footer{
+  margin-top: .3rem;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

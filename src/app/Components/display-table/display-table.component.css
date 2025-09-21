@@ -1,0 +1,252 @@
+.table-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+
+.table-wrapper {
+  width: 100%;
+  /* max-height: 80vh;  */
+  /* overflow: auto; */
+  overflow-x: auto;
+  position: relative;
+}
+
+.mat-mdc-header-row {
+  /* background-color:var(--body-component-bg-third); */
+  background: var(--body-component-bg-secondary);
+  text-align: center; /* Center align the text */
+  text-transform: uppercase; /* Make every word uppercase */
+}
+
+table {
+  width: 100%;
+  table-layout: auto;  
+  border: 1px solid var(--body-bg-secondary);
+  border-collapse: collapse; /* Ensures borders don't double up between cells */
+  border-radius: 10px;
+}
+
+
+.mat-mdc-row td, th{
+  border: 0.5px dotted var(--body-bg-secondary);
+  border-collapse: collapse; /* Ensures borders don't double up between cells */
+}
+
+td, th {
+  width: auto; /* Allow columns to adjust based on content */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-wrap: wrap;
+  
+}
+
+
+.summary {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  margin-bottom: 1.2rem;
+}
+
+.summary > div {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start; 
+  flex: 1; 
+  margin: 0 10px;
+  text-align: left; 
+}
+
+
+.summary > div p {
+  margin: 0; 
+  font-size: large;
+  display: inline; 
+  letter-spacing: 0.6;
+}
+
+.summaryHeadingName{
+  font-weight: 500;
+  letter-spacing: 0.08rem;
+}
+
+.profit {
+  color: #28a745;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.loss {
+  color: #dc3545;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.General{
+  color: var(--body-heading-secondary);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+/* Media query for smaller screens (mobile) */
+@media (max-width: 768px) {
+  .summary {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: stretch; /* Stretch items to full width */
+  }
+
+  .summary > div {
+    margin: 10px 0; /* Add spacing between stacked items */
+  }
+}
+
+
+
+
+/* Ensure the table is scrollable horizontally only when necessary, but content is not hidden */
+@media (max-width: 1024px) {  /* For laptops and smaller screens */
+  .table-wrapper {
+    overflow-x: auto; /* Enable scrolling when the content overflows */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+  }
+
+  table {
+    min-width: 100%; /* Ensure the table occupies full width */
+  }
+
+  td, th {
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {  /* For smaller screens (tablets, mobile) */
+  .table-wrapper {
+    overflow-x: auto; /* Enable scrolling on smaller screens */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+  }
+
+  table {
+    min-width: 100%; /* Ensure table takes full width */
+  }
+
+  td, th {
+    width: auto;
+  }
+}
+
+
+/* Center the action column content */
+td.mat-column-Action {
+  text-align: center;
+}
+
+.delete-button{
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0; 
+}
+
+/* Delete button styles */
+.delete-button .mat-icon {
+  color: #dc3545; /* Red color for the icon */
+}
+
+.delete-button:hover .mat-icon {
+  color: #ff0019; /* Darker red on hover */
+}
+
+.delete-button.mat-icon-button:hover {
+  background: transparent !important; /* Ensure no background on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Centering the Toggle Button */
+.toggle-cell {
+  text-align: center;
+}
+
+/* Wrapper for Centering */
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smaller Toggle Button */
+.toggle-button {
+  width: 4rem; /* Smaller width */
+  height: 1.5rem; /* Smaller height */
+  border: none;
+  border-radius: 1.5rem; /* Adjusted for new size */
+  background: #f5f5f5;
+  cursor: pointer;
+  position: relative;
+  font-size: 0.75rem; /* Reduced text size */
+  font-weight: 600;
+  color: #dc3545; /* Default OFF color */
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  pointer-events: auto;     /* Ensure button can be clicked */
+  z-index: 2;               /* Make sure it's above anything */
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: #f5f5f5;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Round Button Inside the Toggle */
+.toggle-button::after {
+  content: "";
+  width: 0.75rem; /* Smaller round button */
+  height: 0.75rem; /* Smaller round button */
+  border-radius: 50%;
+  background: #dc3545; /* Default red color */
+  position: absolute;
+  top: 0.375rem; /* Adjusted for smaller size */
+  left: 0.375rem; /* Default OFF position */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Toggle Button ON State */
+.toggle-button.on {
+  color: #28a745; /* Green color when ON */
+}
+
+/* Round Button Position for ON State */
+.toggle-button.on::after {
+  transform: translateX(2.25rem); /* Move the button to the right */
+  background: #28a745; /* Green color when ON */
+}
+
+/* Optional: If you want to show OFF with a red background */
+.toggle-button.off {
+  color: #dc3545; /* Red color when OFF */
+}
+
+/* Round Button Position for OFF State */
+.toggle-button.off::after {
+  transform: translateX(0); /* Keep the button on the left */
+  background: #dc3545; /* Red color when OFF */
+}

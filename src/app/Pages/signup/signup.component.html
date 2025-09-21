@@ -1,0 +1,289 @@
+<!-- <div class="card-wrapper">
+    <div class="card-inner shadow p-3 my-4 rounded">
+        <div class="signin-container front">
+            <div class="container text-center">
+                <img class="mb-2 text-center" src="../../../assets/image.png" alt="" srcset="">
+                <h1 class="heading-text fs-2" style="color: var(--icon1-color);">Register Yourself</h1>
+                <form class="form-grid">
+                    <div class="form-group mb-2">
+                        <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name"
+                            [(ngModel)]="firstName" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name"
+                            [(ngModel)]="lastName" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <select id="gender" name="gender" class="form-control" [(ngModel)]="gender" required>
+                            <option value="" disabled [selected]="!gender">Select Gender</option>
+                            <option value="Male" [selected]="gender === 'Male'">Male</option>
+                            <option value="Female" [selected]="gender === 'Female'">Female</option>
+                            <option value="Other" [selected]="gender === 'Other'">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group mb-2">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email"
+                            [(ngModel)]="email" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Username"
+                            [(ngModel)]="username" required>
+                    </div>
+                    <div class="form-group mb-1">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                            [(ngModel)]="password" required>
+                    </div>
+                    <div class="form-group mb-1">
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+                            placeholder="Confirm Password" [(ngModel)]="confirmPassword" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" id="mobileNumber" name="mobileNumber" class="form-control"
+                            placeholder="Mobile Number" [(ngModel)]="mobileNumber" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" id="userStreet" name="userStreet" class="form-control" placeholder="Street"
+                            [(ngModel)]="userStreet" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" id="userDistrict" name="userDistrict" class="form-control"
+                            placeholder="District" [(ngModel)]="userDistrict" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="text" id="userState" name="userState" class="form-control" placeholder="State"
+                            [(ngModel)]="userState" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <input type="number" id="userPincode" name="userPincode" class="form-control" placeholder="Pincode"
+                            [(ngModel)]="userPincode" required>
+                    </div>
+                    <div class="form-group form-check mb-2">
+                        <input type="checkbox" id="acceptTerms" name="acceptTerms" class="form-check-input m-1"
+                            [(ngModel)]="acceptTerms" required>
+                        <label for="acceptTerms" class="form-check-label">I accept the terms and conditions</label>
+                    </div>
+                    <button type="button" class="btn btn-block my-3" (click)="onRegister()">Register</button>
+                </form>
+                <p class="fs-6">
+                    Already have an account?
+                    <a class="register-link" (click)="onLoginClick()" style="cursor: pointer;">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="card-wrapper">
+    <div class="card-inner shadow p-3 my-4 rounded">
+      <div class="signin-container front">
+        <div class="container-fluid text-center">
+          <img class="mb-2 text-center" src="../../../assets/liftPlzLogoNoBG.png" alt="Image" />
+          <h1 class="heading-text fs-2" style="color: var(--icon1-color);">Register Yourself</h1>
+          
+          <form [formGroup]="registrationForm" class="form-grid">
+            
+            <!-- First Name -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="First Name" required />
+                <mat-error *ngIf="registrationForm.get('firstName')?.hasError('required')">
+                  First Name is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Last Name -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" placeholder="Last Name" required />
+                <mat-error *ngIf="registrationForm.get('lastName')?.hasError('required')">
+                  Last Name is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Gender -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender" required>
+                  <mat-option value="Male">Male</mat-option>
+                  <mat-option value="Female">Female</mat-option>
+                  <mat-option value="Other">Other</mat-option>
+                </mat-select>
+                <mat-error *ngIf="registrationForm.get('gender')?.hasError('required')">
+                  Gender is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Email -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Email" required />
+                <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+                  Email is required
+                </mat-error>
+                <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">
+                  Please enter a valid email
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Username -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" placeholder="Username" required />
+                <mat-error *ngIf="registrationForm.get('username')?.hasError('required')">
+                  Username is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Password -->
+            <div class="form-group mb-1">
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" placeholder="Password" required />
+                <mat-error *ngIf="registrationForm.get('password')?.hasError('required')">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Confirm Password -->
+            <div class="form-group mb-1">
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm Password" required />
+                <mat-error *ngIf="registrationForm.get('confirmPassword')?.hasError('required')">
+                  Confirm Password is required
+                </mat-error>
+                <mat-error *ngIf="registrationForm.hasError('mismatch')">
+                  Passwords do not match
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Mobile Number -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput formControlName="mobileNumber" placeholder="Mobile Number" required />
+                <mat-error *ngIf="registrationForm.get('mobileNumber')?.hasError('required')">
+                  Mobile Number is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Street -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Street</mat-label>
+                <input matInput formControlName="userStreet" placeholder="Street" required />
+                <mat-error *ngIf="registrationForm.get('userStreet')?.hasError('required')">
+                  Street is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- District -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>District</mat-label>
+                <input matInput formControlName="userDistrict" placeholder="District" required />
+                <mat-error *ngIf="registrationForm.get('userDistrict')?.hasError('required')">
+                  District is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- State -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>State</mat-label>
+                <input matInput formControlName="userState" placeholder="State" required />
+                <mat-error *ngIf="registrationForm.get('userState')?.hasError('required')">
+                  State is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+  
+            <!-- Pincode -->
+            <div class="form-group mb-2">
+              <mat-form-field appearance="outline">
+                <mat-label>Pincode</mat-label>
+                <input matInput type="number" formControlName="userPincode" placeholder="Pincode" required />
+                <mat-error *ngIf="registrationForm.get('userPincode')?.hasError('required')">
+                  Pincode is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Document Upload Row, aligned under previous row -->
+            <div class="row doc-upload-row">
+              <div class="col-md-6">
+                <div class="doc-upload-card">
+                  <div class="doc-label">
+                    <mat-icon color="primary">credit_card</mat-icon>
+                    <span>Driving License <span class="required-star">*</span></span>
+                  </div>
+                  <input type="file" (change)="onFileChange($event, 'drivingLicense')" class="custom-file-input" accept=".jpg,.jpeg,.png" required />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="doc-upload-card">
+                  <div class="doc-label">
+                    <mat-icon color="primary">verified_user</mat-icon>
+                    <span>Aadhaar Card <span class="required-star">*</span></span>
+                  </div>
+                  <input type="file" (change)="onFileChange($event, 'aadhaarCard')" class="custom-file-input" accept=".jpg,.jpeg,.png" required />
+                </div>
+              </div>
+            </div>
+
+
+
+
+  
+            <!-- Terms and Conditions -->
+            <div class="form-group form-check mb-2">
+              <input
+                type="checkbox"
+                formControlName="acceptTerms"
+                class="form-check-input m-1"
+                required
+              />
+              <label for="acceptTerms" class="form-check-label">I accept the terms and conditions</label>
+            </div>
+  
+            <!-- Register Button -->
+            <button
+            matRipple
+				[matRippleCentered]="false"
+				[matRippleDisabled]="false"
+				[matRippleUnbounded]="false"
+				[matRippleRadius]="75"
+				[matRippleColor]="'#ef4fa747'"
+              type="submit"
+              class="btn btn-block my-3"
+              [disabled]="registrationForm.invalid"
+              (click)="onRegister()"
+            >
+              Register
+            </button>
+          </form>
+  
+          <p class="fs-6">
+            Already have an account?
+            <a class="register-link" (click)="onLoginClick()" style="cursor: pointer;">Login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

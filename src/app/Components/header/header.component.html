@@ -1,0 +1,163 @@
+<nav class="navbar header shadow-lg navbar-expand-lg py-3">
+	<div class="container-fluid mx-2">
+
+		@if (auth.isAuthenticatedAndVerified()) {
+		<button class="navbar-toggler" mat-icon-button (click)="toggleSidenav()">
+			<mat-icon>apps</mat-icon>
+		</button>
+		<div class="logo-container">
+			<a class="logo-img">
+				<img src="../../../assets/liftPlzLogoNoBG.png" alt="" style="height: 2.5rem;width: 2.5rem;">
+			</a>
+			<a class="navbar-brand mx-1 header-title">{{title}}</a>
+		</div>
+		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+		<p [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse header-subtitle my-1 mx-1">{{sub_title}}</p>
+		<!-- <div class="actionButtons"></div> -->
+		
+
+
+
+
+
+
+
+
+
+
+		<div [ngbCollapse]="isMenuCollapsed" class="collapse justify-content-end navbar-collapse">
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class=" header-secondary btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+			<mat-icon> person_pin</mat-icon> Profile
+			  </button>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- <div [ngbCollapse]="isMenuCollapsed" class="collapse justify-content-end navbar-collapse">
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class="header-secondary" >profile</button>
+		</div> -->
+		}
+		@else {
+		
+		<div class="logo-container">
+			<a class="logo-img">
+				<img src="../../../assets/liftPlzLogoNoBG.png" alt="" style="height: 2.5rem;width: 2.5rem;">
+			</a>
+			<a class="navbar-brand mx-1 header-title">{{title}}</a>
+		</div>
+		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+		<p [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse header-subtitle my-1 mx-1">{{sub_title}}</p>
+		<div [ngbCollapse]="isMenuCollapsed" class="collapse justify-content-end navbar-collapse">
+			<ul class="navbar-nav" style="flex-direction: row; gap: 1rem;flex-wrap: wrap;">
+				@for (data of menuList; track $index) {
+				<a matRipple
+				[matRippleCentered]="false"
+				[matRippleDisabled]="false"
+				[matRippleUnbounded]="false"
+				[matRippleRadius]="20"
+				[matRippleColor]="'#ef4fa747'" class="nav-link routes" [routerLink]="data.url" (click)="isMenuCollapsed = true">
+					{{data.name}}
+				</a>
+				}
+				<button matRipple
+				[matRippleCentered]="false"
+				[matRippleDisabled]="false"
+				[matRippleUnbounded]="false"
+				[matRippleRadius]="35"
+				[matRippleColor]="'#ef4fa747'" class="header-secondary" [routerLink]="signing_url" (click)="isMenuCollapsed = true">{{ signing_action }}</button>
+
+			</ul>
+		</div>
+		}
+	</div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+	<div class="offcanvas-header">
+		<h5 class="offcanvas-title fs-2" id="offcanvasWithBothOptionsLabel">
+		  <span class="greeting">Hello</span><br><span class="username my-2"> {{username}}</span>
+		</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	  </div>
+	  
+	  
+	
+
+	<div class="offcanvas-body">
+		<p>user Id :- {{userId}}</p>
+		<hr class="my-1">
+		<p>Choose Your Next Step</p>
+		<div>
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class="offcanvasbuttons my-2" data-bs-dismiss="offcanvas" aria-label="Close" [routerLink]="profilepageurl" ><mat-icon>account_circle</mat-icon> {{profilepage}}</button>
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class="offcanvasbuttons my-2" data-bs-dismiss="offcanvas" aria-label="Close" [routerLink]="brokerConfigpageurl" ><mat-icon>record_voice_over</mat-icon> {{brokerconfigpage}}</button>
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class="offcanvasbuttons my-2" data-bs-dismiss="offcanvas" aria-label="Close" [routerLink]="subscriptionpageurl" >&#8377; {{subscriptionpage}}</button>
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class="offcanvasbuttons my-2" data-bs-dismiss="offcanvas" aria-label="Close" [routerLink]="contactpageurl" ><mat-icon>contact_phone</mat-icon> {{contactpage}}</button>
+
+			<button matRipple
+			[matRippleCentered]="false"
+			[matRippleDisabled]="false"
+			[matRippleUnbounded]="false"
+			[matRippleRadius]="35"
+			[matRippleColor]="'#ef4fa747'" class="offcanvasbuttons" data-bs-dismiss="offcanvas" aria-label="Close" (click)="signout()"><mat-icon>exit_to_app</mat-icon> {{ signout_action }}</button>
+		</div>
+	</div>
+  </div>

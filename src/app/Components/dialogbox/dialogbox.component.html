@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+
+<mat-dialog-content class="mat-typography">
+  <p style="white-space: pre-line; line-height: 1.5;">
+    {{ data.message }}
+  </p>  
+  <small style="color: gray;">{{ data.data }}</small>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>
+    {{ data.cancelaction }}
+  </button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>
+    {{ data.action }}
+  </button>
+</mat-dialog-actions>

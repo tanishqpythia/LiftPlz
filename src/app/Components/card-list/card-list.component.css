@@ -1,0 +1,141 @@
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  padding: 1rem;
+  border: #000000;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.165);
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  color: var(--icon-primary-color);
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.logo-icon {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.logo-icon mat-icon {
+  font-size: 1.5rem;
+  color: var(--icon-secondary-color);
+}
+
+.logo-image {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-image img {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.logo-text {
+  justify-content: center;
+}
+
+/* Text Content */
+.sub-heading {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--sub-heading-color);
+  text-align: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.divider {
+  margin: 0;
+  border: none;
+  height: 1px;
+  background: #223c71;
+}
+
+/* Content Section */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: var(--description-color, #333);
+  line-height: 1.6;
+}
+
+/* Button (if used later) */
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: var(--button-bg-primary-color, #4f46e5);
+  color: var(--button-primary-text-color, #fff);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-button:hover {
+  background: var(--button-bg-primary-hover-color, #4338ca);
+  transform: translateY(-2px);
+}
+
+.card-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--button-bg-primary-focus-color, rgba(79, 70, 229, 0.5));
+}
+
+.card-button:active {
+  background: var(--button-bg-primary-active-color, #3730a3);
+  transform: translateY(0);
+}
+
+.card-button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .card {
+    flex: 0 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    flex: 0 1 100%;
+    max-width: 100%;
+  }
+}

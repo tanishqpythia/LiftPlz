@@ -1,0 +1,17 @@
+<div class="contactus-wrapper" *ngIf="contactdetails">
+    <h1 class="title">{{ contactdetails.introTitle }}</h1>
+  
+    <p class="highlighted">{{ contactdetails.introStatementBold }}</p>
+    <p class="description">{{ contactdetails.introStatement }}</p>
+  
+    <div class="contact-blocks">
+      <div class="contact-item" *ngFor="let item of contactdetails.contactInfo">
+        <mat-icon class="icon">{{ item.maticon }}</mat-icon>
+        <div class="info-text">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.value }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

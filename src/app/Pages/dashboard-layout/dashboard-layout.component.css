@@ -1,0 +1,107 @@
+
+*{
+    background: transparent;
+}
+
+
+/* Wrapper for the entire layout */
+.responsive-layout {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* border-radius: 0px 30px 0px 30px; */
+  }
+  
+  /* Toolbar styles */
+  .fixed-toolbar {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Sidenav container with margin for the fixed toolbar */
+  .sidenav-container {
+    display: flex;
+    flex: 1;
+    /* padding-top: 78px;  */
+    /* border-radius: 0px 30px 0px 30px; */
+  }
+  
+  /* Main content area */
+  .main-content {
+    margin-top: 0;
+    padding-top: 78px;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .all-web-footer{
+    margin-bottom: 0;
+  }
+  
+  /* Customizing the sidenav to hide the scrollbar but allow scrolling */
+  .sidenav {
+    background: var(--header);
+    color: var(--header-font);
+    overflow-y: scroll; /* Enable scrolling */
+    -ms-overflow-style: none;  /* Hides scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hides scrollbar in Firefox */
+    transition: width 0.3s ease;
+    border-radius: 0px 30px 30px 0px;
+  }
+  
+  /* For Webkit-based browsers (Chrome, Safari, Edge, etc.) */
+  .sidenav::-webkit-scrollbar {
+    width: 0px; /* Hide the scrollbar */
+    height: 0px; /* Hide horizontal scrollbar if present */
+  }
+  
+  /* Optionally, style the scrollbar track and thumb to be invisible */
+  .sidenav::-webkit-scrollbar-track {
+    background: transparent; /* Invisible track */
+  }
+  
+  .sidenav::-webkit-scrollbar-thumb {
+    background: transparent; /* Invisible thumb */
+  }
+  
+  /* Remove overflow from the container to ensure no scrollbars are shown */
+  .sidenav-container {
+    overflow: hidden; /* Hides any overflowed content */
+    position: relative;
+  }
+  
+  .mat-drawer-inner-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important; /* Hides scrollbars, still scrollable content */
+    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling */
+  }
+  
+  .bottom .menu-item {
+    padding: 0.2rem;
+}
+  .menu-item{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    overflow-y: hidden;
+  }
+
+  .current-pageRoute mat-icon{
+    color: var(--icon-secondary-color);
+}
+
+
+@media (max-width: 768px) {
+  .sidenav {
+    margin-top: 78px;
+  }
+}
+

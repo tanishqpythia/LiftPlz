@@ -12,26 +12,14 @@ import { ApiService } from '../../services/api/api.service';
 })
 export class ContactusComponent {
   contactdetails: any = {
-    introTitle:'',
-    introStatementBold: '',
-    introStatement: '',
-    contactInfo: [],
+    introTitle: "Contact Us - LiftPls",
+    introStatementBold: "We’re here to help you travel greener, safer, and smarter!",
+    introStatement: "LiftPls is a community-driven platform built for India’s Tier-2 cities. Our team is here to support you – whether you have questions, feedback, or need help navigating our trusted ride-sharing services.",
+    contactInfo: [
+      { title: "Phone", value: "+91 90000 12345", maticon: "call" },
+      { title: "Email", value: "support@liftpls.com", maticon: "mail" },
+      { title: "Address", value: "LiftPls Mobility Solutions, Jaipur, Rajasthan, India", maticon: "place" },
+      { title: "Website", value: "www.liftpls.com", maticon: "language" }
+    ]
   };
-
-  constructor(private apiService: ApiService) {
-    // this.getContactdata();
-  }
-
-  // getContactdata() {
-  //   this.apiService.getSync({
-  //     endpoint: "getdetails",
-  //     isAuthRequired: false,
-  //     isUserIdRequired: false
-  //   }).subscribe(res => {
-  //     this.contactdetails.introTitle = res.data.introTitle;
-  //     this.contactdetails.introStatementBold = res.data.introStatementBold;
-  //     this.contactdetails.introStatement = res.data.introStatement;
-  //     this.contactdetails.contactInfo = JSON.parse(res.data.contactInfo);
-  //   });
-  // }
 }

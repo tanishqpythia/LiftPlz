@@ -1,45 +1,77 @@
 <div class="footer shadow p-2">
   <div class="container content">
     <div class="footer-card-list">
+
+      <!-- 1. Introduction/About -->
       <div class="footer-card">
         <div class="logo p-1">
-          <p class="fs-4 heading-text">{{ infoFooterContent.introTitle }}</p>
+          <p class="fs-4 heading-text">About LiftPls</p>
         </div>
         <hr class="my-1">
         <div class="content p-1">
           <p class="heading-text">
-            <span style="font-weight: 500;">{{ infoFooterContent.introStatementBold }}</span><br>
-            {{ infoFooterContent.introStatement }}
+            <span style="font-weight: 500;">Chale Hum Sath Sath</span><br>
+            LiftPls is a community mobility platform designed for Tier-2 cities. We connect commuters and two-wheeler owners, helping reduce traffic, cut emissions, and lower daily travel costs. Join us for safer, eco-friendly, and affordable rides powered by trust and community.
           </p>
         </div>
       </div>
+
+      <!-- 2. Contact Us -->
       <div class="footer-card">
         <div class="logo p-1">
-          <p class="heading-text fs-4">Contact Information</p>
+          <p class="heading-text fs-4">Contact Us</p>
         </div>
         <hr class="my-1">
         <div class="content p-1">
-          <div class="content-card" *ngFor="let contact of infoFooterContent.contactInfo; let i = index">
+          <div class="content-card">
             <div class="card-title-box">
-              <mat-icon>{{ contact.maticon }}</mat-icon>
-              <span class="heading-title">{{ contact.title }}</span>
+              <mat-icon>call</mat-icon>
+              <span class="heading-title">Phone</span>
             </div>
-            <p class="heading-text">{{ contact.value }}</p>
+            <p class="heading-text">+91 90000 12345</p>
+          </div>
+          <div class="content-card">
+            <div class="card-title-box">
+              <mat-icon>mail</mat-icon>
+              <span class="heading-title">Email</span>
+            </div>
+            <p class="heading-text">support&#64;liftpls.com</p>
+          </div>
+          <div class="content-card">
+            <div class="card-title-box">
+              <mat-icon>language</mat-icon>
+              <span class="heading-title">Website</span>
+            </div>
+            <p class="heading-text">www.liftpls.com</p>
           </div>
         </div>
       </div>
-      <!-- Explore Links Card -->
+
+      <!-- 3. Web Pages/Links -->
       <div class="footer-card">
         <div class="logo p-1">
           <p class="heading-text fs-4">Explore</p>
         </div>
         <hr class="my-1">
         <div class="content p-1">
-          <li class="heading-text content-card my-1" *ngFor="let site of infoFooterContent.explor; let i = index">
-            <a class="heading-text" [routerLink]="site.url">{{ site.name }}</a>
+          <li class="heading-text content-card my-1">
+            <a class="heading-text" routerLink="/about-us">About</a>
+          </li>
+          <li class="heading-text content-card my-1">
+            <a class="heading-text" routerLink="/our-services">Our Services</a>
+          </li>
+          <li class="heading-text content-card my-1">
+            <a class="heading-text" routerLink="/community">Community</a>
+          </li>
+          <li class="heading-text content-card my-1">
+            <a class="heading-text" routerLink="/eco-tips">Eco Tips</a>
+          </li>
+          <li class="heading-text content-card my-1">
+            <a class="heading-text" routerLink="/contact-us">Contact</a>
           </li>
         </div>
       </div>
+
     </div>
   </div>
 </div>

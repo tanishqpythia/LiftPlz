@@ -13,87 +13,87 @@ import Aos from 'aos';
   styleUrl: './our-services.component.css'
 })
 export class OurServicesComponent {
-heading = "Our Services"
-sub_heading = "Welcome to LiftsPlz, your eco-friendly travel platform! We connect commuters, cyclists, and carpoolers to reduce carbon emissions, save travel costs, and promote sustainable mobility. Whether you're going to work, school, or exploring the city, our platform makes it easy to find like-minded travelers heading in the same direction. Join our community and travel responsibly while making new connections."
+  heading = "Our Services";
+  sub_heading = "LiftPls offers a community-driven platform, connecting two-wheeler riders with commuters headed in the same direction. Designed for Tier-2 cities like Jaipur, we make urban travel affordable, convenient, and more sustainable—with safety, verification, and rewards built in.";
 
-card_list = [
-  {
-    heading: 'Carpool Matching',
-    sub_heading: '',
-    description: 'Find and connect with travelers going in the same direction. Our smart matching algorithm ensures you share rides efficiently, saving fuel, reducing emissions, and building a community of eco-conscious commuters.',
-    button_text: 'Learn More',
-    button_route: '/carpool-matching',
-    media_content: 'car_rental',
-    is_button: true,
-    is_mat_icon: true,
-    is_google_icon: false,
-    is_image: false,
-    card_background:"body-component-bg"
-  },
-  {
-    heading: 'Bike Sharing Network',
-    sub_heading: '',
-    description: 'Access a wide network of shared bicycles for last-mile connectivity. Whether you need a quick ride to the station or a leisurely eco-friendly tour, our platform makes cycling convenient and green.',
-    button_text: 'Explore Bikes',
-    button_route: '/bike-sharing',
-    media_content: 'pedal_bike',
-    is_button: true,
-    is_mat_icon: true,
-    is_google_icon: false,
-    is_image: false,
-    card_background:"body-component-bg"
-  },
-  {
-    heading: 'Eco-Travel Guides',
-    sub_heading: '',
-    description: 'Discover sustainable travel tips, local green spots, and eco-friendly destinations. Our guides help you make choices that are both enjoyable and environmentally responsible.',
-    button_text: 'Read Guides',
-    button_route: '/eco-guides',
-    media_content: 'menu_book',
-    is_button: true,
-    is_mat_icon: true,
-    is_google_icon: false,
-    is_image: false,
-    card_background:"body-component-bg"
-  },
-  {
-    heading: 'Community Events',
-    sub_heading: '',
-    description: 'Participate in community rides, clean-up drives, and eco-friendly challenges. Connect with like-minded travelers and make your daily commute part of a larger sustainable movement.',
-    button_text: 'Join Events',
-    button_route: '/community-events',
-    media_content: 'group',
-    is_button: true,
-    is_mat_icon: true,
-    is_google_icon: false,
-    is_image: false,
-    card_background:"body-component-bg"
-  },
-  {
-    heading: 'Travel Carbon Tracker',
-    sub_heading: '',
-    description: 'Track your carbon footprint from daily commutes. See how much CO₂ you save by carpooling, biking, or using shared rides. Our platform provides insights to help you reduce your environmental impact over time.',
-    button_text: 'Track Now',
-    button_route: '/carbon-tracker',
-    media_content: 'eco',
-    is_button: true,
-    is_mat_icon: true,
-    is_google_icon: false,
-    is_image: false,
-    card_background:"body-component-bg"
-  },
-  {
-    heading: 'Safety & Verification',
-    sub_heading: '',
-    description: 'Your safety is our priority. All travelers are verified and rated to ensure trustworthy connections. Enjoy a secure and reliable eco-friendly commuting experience.',
-    button_text: 'Learn More',
-    button_route: '/safety-verification',
-    media_content: 'verified_user',
-    is_button: true,
-    is_mat_icon: true,
-    is_google_icon: false,
-    is_image: false,
-    card_background:"body-component-bg"
-  },
-];
+  card_list = [
+    {
+      heading: 'Verified Ride-Sharing',
+      sub_heading: '',
+      description: 'Share short-distance rides on two-wheelers with trusted, verified members. Our platform ensures secure connections with Aadhaar, driving license, and vehicle verification for every rider and commuter.',
+      button_text: 'Find a Ride',
+      button_route: '/ride-matching',
+      media_content: 'two_wheeler',
+      is_button: true,
+      is_mat_icon: true,
+      is_google_icon: false,
+      is_image: false,
+      card_background:"body-component-bg"
+    },
+    {
+      heading: 'Reward Points & Cash Payouts',
+      sub_heading: '',
+      description: 'Riders earn LiftPls Points for every completed trip. Track rides, reliability, and convert rewards into monthly cash via UPI or bank transfer. Top riders gain badges and special bonuses.',
+      button_text: 'View Dashboard',
+      button_route: '/rider-rewards',
+      media_content: 'workspace_premium',
+      is_button: true,
+      is_mat_icon: true,
+      is_google_icon: false,
+      is_image: false,
+      card_background:"body-component-bg"
+    },
+    {
+      heading: 'Affordable Commuter Subscription',
+      sub_heading: '',
+      description: 'Activate ride-matching and messaging for a low monthly fee. Get discounts with referrals or opt for “Buddy” gifting. Manage your plan and renew with bonus perks.',
+      button_text: 'Choose Plan',
+      button_route: '/subscription',
+      media_content: 'card_membership',
+      is_button: true,
+      is_mat_icon: true,
+      is_google_icon: false,
+      is_image: false,
+      card_background:"body-component-bg"
+    },
+    {
+      heading: 'Eco & Social Impact Tracker',
+      sub_heading: '',
+      description: 'Reduce carbon emissions and move towards greener habits by sharing rides. Our platform offers insights into your CO₂ savings and celebrates the impact with stories and monthly recognition.',
+      button_text: 'See Impact',
+      button_route: '/impact-tracker',
+      media_content: 'eco',
+      is_button: true,
+      is_mat_icon: true,
+      is_google_icon: false,
+      is_image: false,
+      card_background:"body-component-bg"
+    },
+    {
+      heading: 'Community Events & Volunteer Circles',
+      sub_heading: '',
+      description: 'Join city rides, clean-up drives, and awareness campaigns. Become a LiftPls “Champion” and help foster shared travel culture in your area.',
+      button_text: 'Join In',
+      button_route: '/community',
+      media_content: 'groups',
+      is_button: true,
+      is_mat_icon: true,
+      is_google_icon: false,
+      is_image: false,
+      card_background:"body-component-bg"
+    },
+    {
+      heading: 'Safety & Inclusion First',
+      sub_heading: '',
+      description: 'All profiles undergo rigorous verification. We prioritize safety, inclusivity, and mutual trust, making daily travel secure for users of all ages and backgrounds.',
+      button_text: 'See How',
+      button_route: '/trust-safety',
+      media_content: 'verified_user',
+      is_button: true,
+      is_mat_icon: true,
+      is_google_icon: false,
+      is_image: false,
+      card_background:"body-component-bg"
+    }
+  ];
 }

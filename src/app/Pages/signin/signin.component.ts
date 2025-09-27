@@ -31,7 +31,6 @@ export class SigninComponent {
 
   loginForm: FormGroup;
 
-  private dialog = inject(MatDialog);
   
 
   constructor(private fb: FormBuilder, private router: Router, private auth: AuthService, private apiService: ApiService, private notification: NotificationTriggerService, private ngxLoader: NgxUiLoaderService) {
@@ -48,64 +47,13 @@ export class SigninComponent {
   }
 
   ngOnInit() { 
-      // this.showDisclaimer()
+     
   }
 
 
 
 
 
-
-
-  showDisclaimer() {
-  const ref = this.dialog.open(DialogboxComponent, {
-    width: '500px',
-    data: {
-      title: 'Algo Trading Disclaimer & Risk Disclosure',
-      message: `
-        I, the undersigned account holder, hereby acknowledge and confirm that:
-
-        Voluntary Usage:
-I am using this algo trading software voluntarily and connecting my trading account entirely at my own risk.
-
-Risk of Loss:
-I fully understand that algorithmic and futures trading involve high market risks, including the possibility of substantial losses up to and including my entire invested capital. Profitability is not guaranteed, and I solely bear all gains and losses.
-
-Algo Malfunctions & Errors:
-I understand and agree that this software may contain bugs, errors, glitches, or execution failures. If the algorithm generates wrong trades, technical mistakes, or financial losses, I accept that the fault is entirely mine and not of the developer/provider. I will not bring any legal claim, complaint, or proceeding against the developer/provider, its owners, employees, affiliates, or partners under any circumstances.
-
-Data & Privacy:
-I acknowledge that my trading account information and other personal data may be stored, processed, or transmitted during the use of this software. I accept all risks related to data security, including potential leaks or breaches.
-
-No Liability of Provider:
-The developer/provider does not provide investment advice and is not responsible or liable for any financial loss, damages, technical errors, unauthorized trades, or other issues arising from the use of this software.
-
-Auto Login & Trading Permission:
-I consent to enable auto-login/daily login for account access.
-I authorize the algorithm to execute live trades in my account as per the strategies configured.
-
-Legal Release:
-By signing this disclaimer, I release and permanently discharge the software developer/provider and any of its affiliates from all forms of liability, legal claims, lawsuits, or demands arising from the use of this software.
-
-Acknowledgment:
-I declare that I have fully understood all risks, terms, and limitations of algo trading software. I accept full responsibility for my trading decisions, execution errors, and technical risks.
-      `,
-      action: 'I Agree & Continue',
-      cancelaction: 'I Disagree',
-      data: 'LiftPlz appreciates your understanding and compliance with this disclaimer.'
-    }
-  });
-
-  ref.afterClosed().subscribe(ok => {
-    if (ok) {
-      console.log("Disclaimer Accepted ✔️");
-      
-    } else {
-      console.log("User exited ❌");
-      this.router.navigate(['/home']);
-    }
-  });
-}
 
 
   onSignIn() {
@@ -132,35 +80,79 @@ I declare that I have fully understood all risks, terms, and limitations of algo
       console.log('Salted Password:', password);
       console.log('Hashed Password:', hashedPassword);
 
-      // const body = { Username: username, Password: hashedPassword, passwordSalt: randomSalt };
+      // If you need a different payload, use a different variable name
+      const backendBody = { Username: username, Password: hashedPassword, passwordSalt: randomSalt };
 
-      this.apiService.postSync({endpoint:'signin', body:body}).subscribe(
-        (response: any) => {
-          console.log(response)
-          this.ngxLoader.stop()
-          if (response && response.access_token) {
-            console.log(response)
-            this.JWT_Token = response.access_token;
-            this.notification.showNotification({
+      console.log('Request Body:', backendBody);
+
+
+      // _______________________ local test _______________________
+      this.notification.showNotification({
               notificationType: 'success',
               Message: "Login Successful",
               verticalPosition: 'top',
             });
-            this.auth.set_Credentials(this.JWT_Token.toString());
-            console.log("navigating to dashboard")
-            this.router.navigate(['/user-dashboard']);
-          }
-        },
-        (error: any) => {
-          this.ngxLoader.stop()
-          console.error('Error during sign-in:', error.error);
-          this.notification.showNotification({
-            notificationType: 'error',
-            Message: "Login failed. Please try again.",
-            verticalPosition: 'top',
-          });
-        }
-      );
+
+    // Proper JWT dummy token
+    const header = { alg: "HS256", typ: "JWT" };
+    const payload = {
+      sub: '12345',
+      role: '0', 
+      unique_name: 'TestUser',
+      webHookUrl: 'http://dummy.webhook',
+      exp: Math.floor(Date.now() / 1000) + 3600
+    };
+
+    function base64url(source: string) {
+      // Encode in base64, then replace +, /, = for URL safety
+      return btoa(source)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=+$/, '');
+    }
+
+    const encodedHeader = base64url(JSON.stringify(header));
+    const encodedPayload = base64url(JSON.stringify(payload));
+    const signature = "dummy-signature"; // Not validated locally
+
+    const dummyToken = `${encodedHeader}.${encodedPayload}.${signature}`;
+
+    // Store temp credentials
+    this.auth.set__temp_creedentials(dummyToken);
+
+    // Redirect to dashboard-catelog
+    this.router.navigate(['/dashboard-catelog']);
+    this.ngxLoader.stop()
+    // _______________________ local test _______________________
+
+
+      // this.apiService.postSync({endpoint:'signin', body:body}).subscribe(
+      //   (response: any) => {
+      //     console.log(response)
+      //     this.ngxLoader.stop()
+      //     if (response && response.access_token) {
+      //       console.log(response)
+      //       this.JWT_Token = response.access_token;
+      //       this.notification.showNotification({
+      //         notificationType: 'success',
+      //         Message: "Login Successful",
+      //         verticalPosition: 'top',
+      //       });
+      //       console.log("navigating to dashboard")
+      //       this.auth.set_Credentials(this.JWT_Token.toString());
+      //       this.router.navigate(['/user-dashboard']);
+      //     }
+      //   },
+      //   (error: any) => {
+      //     this.ngxLoader.stop()
+      //     console.error('Error during sign-in:', error.error);
+      //     this.notification.showNotification({
+      //       notificationType: 'error',
+      //       Message: "Login failed. Please try again.",
+      //       verticalPosition: 'top',
+      //     });
+      //   }
+      // );
     } else {
       this.ngxLoader.stop()
       this.notification.showNotification({

@@ -1,0 +1,18 @@
+<app-section-headings heading="Choose Your Dashboard" sub_heading="Select a dashboard to continue"></app-section-headings>
+<div class="dashboard-card-grid">
+  <div 
+    class="dashboard-card" 
+    *ngFor="let dashboard of allowedDashboards"
+    (click)="onDashboardSelect(dashboard)"
+    tabindex="0"
+    [attr.aria-label]="dashboard.name"
+  >
+    <div class="dashboard-card-icon">
+      <mat-icon>{{dashboard.icon}}</mat-icon>
+    </div>
+    <div class="dashboard-card-details">
+      <h3 class="dashboard-card-title">{{dashboard.name}}</h3>
+      <p class="dashboard-card-path">/{{dashboard.path}}</p>
+    </div>
+  </div>
+</div>

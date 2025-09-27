@@ -1,4 +1,8 @@
 import {
+  MatButton,
+  MatButtonModule
+} from "./chunk-ZO2FIWO5.js";
+import {
   Overlay,
   OverlayConfig,
   OverlayModule
@@ -19,10 +23,6 @@ import {
   transition,
   trigger
 } from "./chunk-QS3RKGT3.js";
-import {
-  MatButton,
-  MatButtonModule
-} from "./chunk-ZO2FIWO5.js";
 import {
   LiveAnnouncer,
   MatCommonModule

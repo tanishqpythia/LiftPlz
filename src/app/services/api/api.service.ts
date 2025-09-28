@@ -4,12 +4,14 @@ import { Observable, throwError, lastValueFrom } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl: string = 'https://api-liftplz.gentlesky-588985ad.centralus.azurecontainerapps.io';
+  // private baseUrl: string = 'https://api-liftplz.gentlesky-588985ad.centralus.azurecontainerapps.io';
+  private baseUrl: string = environment.apiBase.replace(/\/+$/, ''); // trim trailing /
   // private baseUrl: string = 'http://localhost:8000';
 
   constructor(private http: HttpClient, private auth: AuthService,  private ngxLoader: NgxUiLoaderService) { }

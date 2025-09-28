@@ -9,7 +9,8 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl: string = 'http://localhost:8000';
+  private baseUrl: string = 'https://api-liftplz.gentlesky-588985ad.centralus.azurecontainerapps.io';
+  // private baseUrl: string = 'http://localhost:8000';
 
   constructor(private http: HttpClient, private auth: AuthService,  private ngxLoader: NgxUiLoaderService) { }
 

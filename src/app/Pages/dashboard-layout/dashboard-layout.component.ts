@@ -10,7 +10,8 @@ import {MatMenuTrigger, MatMenuModule} from '@angular/material/menu';
 import {MatDialog,} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
+import { NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 
 
@@ -42,7 +43,7 @@ export class DashboardLayoutComponent {
   isMobileSidenavOpen = false; 
   isHovered = false; 
   sidenavWidth = 70; 
-  expandedWidth = 200; 
+  expandedWidth = 275; 
 
   navigationLinks: any[] = [];
 
@@ -72,14 +73,28 @@ export class DashboardLayoutComponent {
     });
   }
 
+  // ngOnInit(): void {
+  //   this.sidenavService.getNavigationLinks().subscribe((links) => {
+  //     this.navigationLinks = links;
+  //   });
+
+  //   this.router.navigate(['/user-dashboard']);
+  //   this.showDisclaimer()
+  // }
+
+
+
   ngOnInit(): void {
+  this.sidenavService.currentDashboard$.subscribe((dashboard) => {
+    console.log("Loading sidenav for dashboard:", dashboard);
     this.sidenavService.getNavigationLinks().subscribe((links) => {
       this.navigationLinks = links;
+      console.log("Sidenav Links 👉", this.navigationLinks);
     });
+  });
 
-    this.router.navigate(['/user-dashboard']);
-    this.showDisclaimer()
-  }
+  // this.showDisclaimer();
+}
 
 
 

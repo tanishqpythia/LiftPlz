@@ -34,19 +34,14 @@ export class HeaderComponent {
 
   username = "user name"
   userId = "userId"
-  profilepage = "View Profile"
-  profilepageurl = "/userProfile"
-  brokerconfigpage = "View Broker Details"
-  brokerConfigpageurl = "/brokerConfig"
-  subscriptionpage = "Get Subscription"
-  subscriptionpageurl = "/subscriptions"
+  DashboardCatelog = "Dashboard Catelog"
+  DashboardCatelogUrl = "/dashboard-catelog"
   contactpage = "Contact us"
   contactpageurl = "/contactus"
 
 
   constructor(private sidenavService: SidenavService, private authService:AuthService ) {
     this.getuserName()
-
   }
 
 

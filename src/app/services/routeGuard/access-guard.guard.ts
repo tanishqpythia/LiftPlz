@@ -18,3 +18,17 @@ export const accessGuardGuard: CanActivateFn = (route, state) => {
     return of(router.createUrlTree(['/signIn']));
   }
 }
+
+export const TempAccessGuardGuard: CanActivateFn = (route, state) => {
+
+
+  const authService = inject(AuthService);
+  const router = inject(Router)
+  const path = route.url[0].path
+  if(authService.hasTempAccess(path)){
+    return of(true);
+  }
+  else{
+    return of(router.createUrlTree(['/signIn']));
+  }
+}
